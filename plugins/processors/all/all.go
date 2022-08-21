@@ -27,5 +27,6 @@ import (
 	_ "github.com/influxdata/telegraf/plugins/processors/tag_limit"
 	_ "github.com/influxdata/telegraf/plugins/processors/template"
 	_ "github.com/influxdata/telegraf/plugins/processors/topk"
+	_ "github.com/influxdata/telegraf/plugins/processors/units"
 	_ "github.com/influxdata/telegraf/plugins/processors/unpivot"
 )

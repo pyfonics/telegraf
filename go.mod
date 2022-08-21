@@ -103,6 +103,7 @@ require (
 	github.com/karrick/godirwalk v1.16.1
 	github.com/kballard/go-shellquote v0.0.0-20180428030007-95032a82bc51
 	github.com/lxc/lxd v0.0.0-20220624154119-6d73e2a3d0c5
+	github.com/martinlindhe/unit v0.0.0-20210313160520-19b60e03648d
 	github.com/matttproud/golang_protobuf_extensions v1.0.2-0.20181231171920-c182affec369
 	github.com/mdlayher/apcupsd v0.0.0-20220319200143-473c7b5f3c6a
 	github.com/microsoft/ApplicationInsights-Go v0.4.4

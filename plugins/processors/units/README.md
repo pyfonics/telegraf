@@ -1,0 +1,31 @@
+# Units Processor Plugin
+
+Use the `units` processor to convert the units of fields.
+
+## Configuration
+
+```toml @sample.conf
+[[processors.units]]
+    ## Regex pattern matching on field_key.
+    ## hint: use regex capture groups to isolate any pre-appended unit suffixes
+    pattern = "(.*cpu_time)_ms"
+    ## Current unit of the field_value.
+    unit = "MilliSeconds"
+    
+    ## Matches of the pattern will be replaced with this string. 
+    ## hint: regex capture groups can be used in the replacement string.
+    replacement = "${1}" 
+    ## Unit to convert to
+    dest_unit = "Seconds"
+    ## Is the field_value a monotonically increasing counter.
+    is_counter = false
+    ## If `auto_suffix = true` then dest_unit will be added as a suffix to the field_key
+    auto_suffix = true 
+
+```
+
+## Example
+
+```diff
+
+```
