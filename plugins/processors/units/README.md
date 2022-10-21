@@ -7,20 +7,24 @@ Use the `units` processor to convert the units of fields.
 ```toml @sample.conf
 [[processors.units]]
     ## Regex pattern matching on field_key.
-    ## hint: use regex capture groups to isolate any pre-appended unit suffixes
+    ## hint: use regex capture groups to isolate any existing unit suffixes
     pattern = "(.*cpu_time)_ms"
-    ## Current unit of the field_value.
-    unit = "MilliSeconds"
-    
-    ## Matches of the pattern will be replaced with this string. 
-    ## hint: regex capture groups can be used in the replacement string.
-    replacement = "${1}" 
+    ## Unit to convert from
+    from = "milliseconds"
     ## Unit to convert to
-    dest_unit = "Seconds"
+    to = "seconds"
+    ## Matches of the pattern will be replaced with this string. 
+    ## hint: regex capture groups can be used in the replacement string to add suffixes to.
+    # replacement = "${0}" 
+
+    ## If `unit_suffix = true` then destination unit will be added as a suffix
+    # unit_suffix = true
     ## Is the field_value a monotonically increasing counter.
-    is_counter = false
-    ## If `auto_suffix = true` then dest_unit will be added as a suffix to the field_key
-    auto_suffix = true 
+    # is_counter = false
+
+    ## Tags to be added to the measurement (all values must be strings)
+    # [processors.units.tags]
+    #   additional_tag = "tag_value"
 
 ```
 
